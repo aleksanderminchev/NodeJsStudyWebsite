@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Node Learning</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../home.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">NodeJS Learning</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+      <li class="dropdown"  ><a class="dropdown-toggle" data-toggle="dropdown" href="/basics">Basics <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="/basics">Basics</a></li>
+        <li><a href="/installingNode">Installing NodeJs</a></li>
+        <li><a href="/functions">Functions</a></li>
+        <li><a href="/loops">Loops</a></li>
+        <li><a href="/objects">Objects</a></li>
+        <li><a href="/arrays">Arrays</a></li>
+      </ul>
+    </li>
+      <li><a href="/server">Server</a></li>
+      <li><a href="/crud">CRUD API</a></li>
+      <li><a href="/pages">Html pages</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <h1>Welcome to my website!</h1>
+  <p>Here I will be showcassing everything I have learned in NodeJS so far. </br> 
+    Everything is showcassed and explained with pictures and code examples as guidence.</p>
+</div>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div  class="item active">
+      <img style="width: 100%; height: 550px;" src="./rotation1.png" alt="Los Angeles">
+    </div>
+
+    <div class="item">
+      <img style="width: 100%; height: 550px;" src="./project.png" alt="Chicago">
+    </div>
+
+    <div class="item">
+      <img  style="width: 100%; height: 550px;" src="./code-shutterstock.png" alt="New York">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+</body>
+</html>

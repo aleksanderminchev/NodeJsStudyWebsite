@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Node Learning</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../home.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse ">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">NodeJS Learning</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+        <li class="dropdown"  ><a class="dropdown-toggle" data-toggle="dropdown" href="/basics">Basics <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="/basics">Basics</a></li>
+          <li><a href="/installingNode">Installing NodeJs</a></li>
+          <li><a href="/functions">Functions</a></li>
+          <li><a href="/loops">Loops</a></li>
+          <li><a href="/objects">Objects</a></li>
+          <li><a href="/arrays">Arrays</a></li>
+        </ul>
+      </li>
+        <li><a href="/server">Server</a></li>
+        <li><a href="/crud">CRUD API</a></li>
+        <li><a href="/pages">Html pages</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+<div class="container">
+  <h1>HTML Pages</h1>
+  <hr class="line">
+  <p>By using the res.sendFile() we are able to send entire HTML pages instead of just specific HTML code like before.
+    We need to establish our folder from where we can get these pages and design them. 
+    Normally that would be the public folder with subfolder for every html page.
+    We can style these pages however we like with our own custom css and js scripts to run on them.
+    By using __dirname we can make it so this code is runnable everywhere in any machine as long as they have the source code and do not change the file hierarchy.
+    <pre><code>
+    app.use(express.static('public'));
+
+    app.get("/", (req, res) => {
+      res.sendFile(__dirname + "/public/welcome/welcome.html");
+    });
+    app.get("/dragons", (req, res) => {
+      res.sendFile(__dirname + "/public/dragons/dragons.html");
+    });
+    </code></pre>
+  </p>
+  <p> What we can also do is that we can assign routes to links/buttons so that we can transition between pages or request specific information from the backend.
+    Like in the 2 examples given below.
+    <pre><code>
+    <a href="/">Clicking this link will return you to the home page</a>
+  </code></pre>
+  <img style="margin-left:9%" src="./page.png">
+  </p>
+
+  </div>
+
+</body>
+</html>

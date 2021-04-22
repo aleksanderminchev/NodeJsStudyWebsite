@@ -1,0 +1,44 @@
+body{
+    background-color: rgb(211, 201, 175);
+    font-family: 'Times New Roman', Times, serif;
+}
+pre{
+    border-left: solid 5px cornflowerblue ;
+    max-width: 95%;
+}
+code{
+    font-size: 147%;
+    max-width: 75%;
+    color: rgb(0, 0, 0);
+    margin-left: 10%;
+}
+p{
+    font-size: 147%;
+    max-width: 75%;
+    color: rgb(0, 0, 0);
+    margin-left: 10%;
+}
+.actualList{
+    font-size: 147%;
+    max-width: 75%;
+    color: rgb(0, 0, 0);
+    margin-left: 11%;
+}
+img{
+    width: 80%;
+    border: double 3px
+}
+.line{
+    border-top: 10px double black;
+    width: 85%;
+    margin-right: 15%;
+    margin-left: 5%;
+}
+.bordertest{
+    border-style:solid; 
+    border-color: aliceblue;
+}
+h1{
+    padding-right: 3%;
+    text-align:center;
+}

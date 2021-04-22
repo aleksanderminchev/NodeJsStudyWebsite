@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Node Learning</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../home.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body style="    background-color: rgb(211, 201, 175);">
+
+<nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">NodeJS Learning</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+      <li class="dropdown"  ><a class="dropdown-toggle" data-toggle="dropdown" href="/basics">Basics <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="/basics">Basics</a></li>
+        <li><a href="/installingNode">Installing NodeJs</a></li>
+        <li><a href="/functions">Functions</a></li>
+        <li><a href="/loops">Loops</a></li>
+        <li><a href="/objects">Objects</a></li>
+        <li><a href="/arrays">Arrays</a></li>
+      </ul>
+    </li>
+      <li><a href="/server">Server</a></li>
+      <li><a href="/crud">CRUD API</a></li>
+      <li><a href="/pages">Html pages</a></li>
+    </ul>
+  </div>
+</nav>
+  
+<div class="container">
+  <h1>Objects</h1>
+  <hr class="line">
+  <p>The Object class represents one of JavaScript's data types. It is used to store various keyed collections and more complex entities. Objects are created by first initializing a variable or constant with cirly braces after the '=' sign. They work based on key:value pairs. Properties of objects are added as keys with some sort of value. 
+    To access them we only have to specify the name of the object and key and we will get returned the corresponding value. 
+  As you can see in the image we have too types of notation for accessing properties of an object square or dot. 
+  Their types are also diffrent depending on the value type which is saved within it.
+  Typicallly objects inherit properties (including methods) from Object.prototype.
+  </p>
+    <img style="margin-left:7% ;" src="keyvalue.png">
+    <p>Properties can be added or removed dynamically as well. By using object.nameOfNewProperty syntax we can add them dynamically or remove them by using the delete keyword and stating which property to remove.</p>
+    <img  style="margin-left:6.5% ;" src="./properties.png">
+</div>
+
+</body>
+</html>

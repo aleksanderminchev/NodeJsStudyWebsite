@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Node Learning</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../home.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">NodeJS Learning</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+      <li class="dropdown"  ><a class="dropdown-toggle" data-toggle="dropdown" href="/basics">Basics <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="/basics">Basics</a></li>
+        <li><a href="/installingNode">Installing NodeJs</a></li>
+        <li><a href="/functions">Functions</a></li>
+        <li><a href="/loops">Loops</a></li>
+        <li><a href="/objects">Objects</a></li>
+        <li><a href="/arrays">Arrays</a></li>
+      </ul>
+    </li>
+      <li><a href="/server">Server</a></li>
+      <li><a href="/crud">CRUD API</a></li>
+      <li><a href="/pages">Html pages</a></li>
+    </ul>
+  </div>
+</nav>
+  
+<div class="container">
+  <h1>REST API</h1>
+  <hr class="line">
+  <p>By using the app.get(),app.post(),app.patch()/or app.put(), app.delete() syntax we are able to create REST API's which serve as the backbone of most web-based development.
+    
+    <div class="actualList">
+    <li>Get Requests-looking information either a singular entry in our backend database or all of the entries, 
+      or even a select few which feet a specific requirement. Here you can see an implementation for plants. </li>
+      <pre><code>
+      //plants is an array with someplants
+      //in /plants we return all of the plants
+      app.get("/plants", (req, res) => {
+        res.send({ data: plants });
+      });
+      //in /plants/:id we request a specific id, and we find it in the array
+      app.get("/plants/:id", (req, res) => {
+       const plantId = Number(req.params.id);
+       const foundPlant = plants.find(plant => plant.id === plantId);
+        res.send({ data: foundPlant });
+      });
+  </code></pre>
+    <li>Post Requests-  create several entries in the database or one singular entry. To see if they work you have to use API's clients like Postman.</li>
+    <pre><code>
+      // in either a form or postman we send all of the needed data for a plant creation
+      // we have to also make sure the id we send gets updated to the correct one.
+      app.post("/plants", (req, res) => {
+       const newPlant = req.body;
+       newPlant.id = ++id;
+       plants.push(newPlant);
+       res.send({ data: newPlant });
+      });
+</code></pre>
+    <li>Patch Requests- updates information in all of the entries in the database or one entry. Again has to be tested with Postman</li>
+    <pre><code>
+      //find the id inputed from the query and update the data for that plant
+      app.patch("/plants/:id", (req, res) => {
+        let plantUpdated = false;
+        plants = plants.map(plant => {
+            if (plant.id === Number(req.params.id)) {
+                plantUpdated = true;
+                return { ...plant, ...req.body, id: plant.id };    
+            }
+            return plant;
+        });
+        res.send({ data: plantUpdated });
+      });
+    </code></pre>
+    <li>Delete Requests- can delete the entire all of the entries(not good) or one entry. Again has to be tested with Postman.</li>
+    <pre><code>
+      //same as patch only it deletes the found flant, a confirmation for the deletion can be sent back.
+      app.delete("/plants/:id", (req, res) => {
+        plants = plants.filter(plant => plant.id !== Number(req.params.id));
+        res.send({ });
+      });
+    </code></pre>
+  </div>
+</p>
+ <p> To get these to work properly we first need to establish how the user can send the needed data towards our backend.
+    This is done either with path variables or query strings.
+<pre><code>
+  app.get("/querystring", (req, res) => {
+    // console.log(req.query);
+    res.send({ query: req.query });
+  });
+
+  app.get("/pathvariable/:message/:title", (req, res) => {
+    res.send({ 
+        message: req.params.message, 
+        title: req.params.title
+    });
+  });
+
+  app.post("/whatever", (req, res) => {
+    console.log(req.body);
+    // todo get what is in the body and send it back
+    res.send({ body: req.body });
+  });
+</code></pre>  
+</p>
+<p>The Query Strings are added in the following format "?query1=2&&query2=3" after the route name <br>
+The Path Variables are slightly diffrent in that we just specify the value we are looking for or sending, again after the backslash you type the value until you fulfill all of the path variables else it will not work.<br>
+In the app.post() we need to use Postman to send a request body(normally this would be done with a form in html).  
+</p>
+<div class="row">
+<div class="col-sm-6"><img style="margin-left:7%" src="queryStrings.png"></div>
+   <div class="col-sm-6"> <img style="margin-left:2%" src="pathvar.png"></div>
+</div>
+</div>
+
+</body>
+</html>

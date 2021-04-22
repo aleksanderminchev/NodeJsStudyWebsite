@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Node Learning</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../home.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body >
+
+<nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">NodeJS Learning</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+      <li class="dropdown"  ><a class="dropdown-toggle" data-toggle="dropdown" href="/basics">Basics <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="/basics">Basics</a></li>
+        <li><a href="/installingNode">Installing NodeJs</a></li>
+        <li><a href="/functions">Functions</a></li>
+        <li><a href="/loops">Loops</a></li>
+        <li><a href="/objects">Objects</a></li>
+        <li><a href="/arrays">Arrays</a></li>
+      </ul>
+    </li>
+      <li><a href="/server">Server</a></li>
+      <li><a href="/crud">CRUD API</a></li>
+      <li><a href="/pages">Html pages</a></li>
+    </ul>
+  </div>
+</nav>
+  
+<div class="container">
+  <h1>Loops</h1>
+  <hr class="line">
+  <p> In Node Js we can use standart loops syntax which is used in a language like Java. The for statement creates a loop that consists of three optional expressions, enclosed in parentheses and separated by semicolons, followed by a statement (usually a block statement) to be executed in the loop. </p>
+  <img  style="margin-left: 9%;"src="./standartloop.png">
+  <p> Foreach() loops are great for going through arrays and utillizing the elements of the array. It uses an arrow function to ease the work.
+     This creates a variable which stores one item at a time from the array and then executes the code in the curly braces for every item. 
+     Another way of using loops is with for...of syntax which is very simillar to foreach()</p>
+  <img  style="margin-left: 9%;"src="./foreach.png">
+  <p>Map is another way to utillize an a loop. 
+    The map() method creates a new array populated with the results of calling a provided function on every element in the calling array. We can also add the current index of the item or the array we are calling map on.</p>
+    <img  style="margin-left: 9%;"src="./map.png">
+  </div>
+
+</body>
+</html>

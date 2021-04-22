@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Node Learning</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../home.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body >
+
+<nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">NodeJS Learning</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+      <li class="dropdown"  ><a class="dropdown-toggle" data-toggle="dropdown" href="/basics">Basics <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="/basics">Basics</a></li>
+        <li><a href="/installingNode">Installing NodeJs</a></li>
+        <li><a href="/functions">Functions</a></li>
+        <li><a href="/loops">Loops</a></li>
+        <li><a href="/objects">Objects</a></li>
+        <li><a href="/arrays">Arrays</a></li>
+      </ul>
+    </li>
+      <li><a href="/server">Server</a></li>
+      <li><a href="/crud">CRUD API</a></li>
+      <li><a href="/pages">Html pages</a></li>
+    </ul>
+  </div>
+</nav>
+  
+<div class="container">
+  <h1>Functions</h1>
+  <hr class="line">
+  <p>Here functions (methods in Java) have to be denoted with the function keyword. After that we can give them a name and pass arguments to the function. It is possible for it to have no return type(i.e void).</p>
+  <img style="margin-left:9%" src="./functions.png">
+  <p>Primitive parameters (such as a number) are passed to functions by value; 
+    the value is passed to the function, but if the function changes the value of the parameter,
+     this change is not reflected globally or in the calling function. If you run the example below it will print to the console the number 4 and not 5. 
+     To get 4 we can have the function return the number instead. 
+     While if you do it for a non-primitive value like an array it will actually show the change on the variable.</p>
+     <pre><code>
+      let x=4;
+      function myFunction(number){
+        number=5;
+      }
+      myFunction(x);
+      console.log(x);</code></pre>
+  <p>You can also save functions within variables or constants but it is better to do so in a constant.
+    This is called a function expression. 
+    The function we are passing is actually anonymous we ca give it a name as well so it helps debugging. 
+    Function expressions are convenient when passing a function as an argument to another function.
+     Also in the picture below we can see that we can do multiple function within 1 function. These of course only work within the scope of the function they are within. They can access global variables or variables which are scoped within themselves or the higher function. 
+    </p>
+  <img style="margin-left:9%" src="./constFunct.png">
+  <p>Function expressions in JavaScript are not hoisted, unlike function declarations. You can't use function expressions before you create them. You can see in the example below.</p>
+<pre><code>
+    console.log(notHoisted) // undefined
+    //even though the variable name is hoisted, the definition isn't. so it's undefined.
+    notHoisted(); // TypeError: notHoisted is not a function
+
+    let notHoisted = function() {
+       console.log('bar');
+    };
+</code></pre>
+<p>You can also reference other function within anothers paramethers. In the example given.</p>
+<img style="margin-left:9%" src="./argfunc.png">
+<p>Arrow functions have a shorter syntax tha a regular one and do not posses a name and are anonymous.</p>
+<img style="margin-left:9%" src="./arrowfunc.png">
+</div>
+
+</body>
+</html>

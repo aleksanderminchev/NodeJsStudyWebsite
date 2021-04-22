@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Node JS Learning</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../home.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">NodeJS Learning</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+      <li class="dropdown"  ><a class="dropdown-toggle" data-toggle="dropdown" href="/basics">Basics <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="/basics">Basics</a></li>
+        <li><a href="/installingNode">Installing NodeJs</a></li>
+        <li><a href="/functions">Functions</a></li>
+        <li><a href="/loops">Loops</a></li>
+        <li><a href="/objects">Objects</a></li>
+        <li><a href="/arrays">Arrays</a></li>
+      </ul>
+    </li>
+      <li><a href="/server">Server</a></li>
+      <li><a href="/crud">CRUD API</a></li>
+      <li><a href="/html">Html pages</a></li>
+    </ul>
+  </div>
+</nav>
+  
+<div class=".container-fluid">
+ <h1>Console, Variables, Constants</h1>
+ <hr class="line">
+ <div class="row">
+ <div class="col-sm-6">
+ <p >You can create either constants or variables with 'const' and 'let' keyword. Using them like in the picture initiliazes the constants/variables.<br>The const declaration creates a read-only reference to a value. It does not mean the value it holds is immutable—just that the variable identifier cannot be reassigned. For instance, in the case where the content is an object, this means the object's contents (e.g., its properties) can be altered.</p>
+</div>
+<div class=" col-sm-6 ">
+  <img class="image-responsive" src="./varconst.png">
+  </div>
+ </div>
+ <br>
+  <div class="row">
+  <div class="col-sm-6"><p> Console.log() is the function which prints to the console in NodeJs.<br>
+   You can concatinate variables you would like to print out  with the '+' sign.
+    Another way is using ${expression} which is template literals(strings). The expression inside gets concatinated to the other string. </p> </div>
+  <div class=" col-sm-6 ">
+    <img class="image-responsive" src="./console.png"> 
+  </div>
+  </div>
+  <h1>Numbers</h1>
+  <hr class="line">
+  <div class="row">
+  <div class="col-sm-6"><p>ParseInt or ParseFloat methods allow us to convert a string to a int even if it has non-number characters.
+     '+' before the const/variable also servers a simillar function in printing to console as it denotes that the following variable is a number.
+      Using Number() on any string converts it to a number but if non-number characters are present it gives back NaN.<br>
+      toFixed() function allows us to set how many digits to show after the decimal point returning a string. </p></div>
+  <div class="col-sm-6"><img src="./console2.png"> <img src="./float.png"></div>
+ </div>
+ <br>
+ <h1>Strings</h1>
+ <hr class="line">
+ <div class="row">
+   <div class="col-sm-6"><p>Strings in NodeJs can also function as an array of characters. We can either use search() or chartAt() functions to find the character we want.
+      Another way is to use an array syntax to lookup a specific position in the array and that would be the following syntax - array[i].</p></div>
+   <div class="col-sm-6"><img src="./strings.png"></div>
+ </div>
+</div>
+</body>
+</html>
